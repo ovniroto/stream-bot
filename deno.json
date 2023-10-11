@@ -1,0 +1,32 @@
+{
+  "lock": false,
+  "tasks": {
+    "check": "deno fmt --check && deno lint && deno check ./src/**/*.ts && deno check ./src/**/*.tsx",
+    "dev": "deno run -A --unstable --watch=./src/static/,./src/routes/ ./src/dev.ts",
+    "build": "deno run -A --unstable ./src/dev.ts build",
+    "start": "deno run -A --unstable ./src/main.ts",
+    "build": "deno run -A ./build.ts",
+    "update": "deno run -A -r https://fresh.deno.dev/update .",
+    "preview": "deno run -A ./main.ts"
+  },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.5.0/",
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "twind": "https://esm.sh/twind@0.16.19",
+    "twind/": "https://esm.sh/twind@0.16.19/",
+    "$std/": "https://deno.land/std@0.193.0/",
+    "fresh-session": "https://deno.land/x/fresh_session@0.2.2/mod.ts",
+    "zip": "https://deno.land/x/zip@v1.2.5/mod.ts",
+    "openai": "https://deno.land/x/openai@1.4.2/mod.ts",
+    "uuid": "https://esm.sh/uuid@9.0.0",
+    "tmi.js": "https://esm.sh/tmi.js@1.8.5",
+    "socket.io": "https://esm.sh/socket.io@4.7.2"
+  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "exclude": ["**/_fresh/*"]
+}
