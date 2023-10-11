@@ -1,4 +1,4 @@
-# [StreamBot](https://streambot.deno.dev) v0.1.0 (WIP)
+# [StreamBot](https://streambot.deno.dev) v0.1.1 (WIP)
 
 [![GitHub Issues](https://img.shields.io/github/issues/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/issues)
 [![GitHub Tag](https://img.shields.io/github/tag/ovniroto/stream-bot.svg)](https://github.com/ovniroto/stream-bot/tags)
