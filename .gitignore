@@ -8,5 +8,6 @@
 # Fresh build directory
 _fresh/
 
-# Database
 database/
+update/
+backup/

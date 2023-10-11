@@ -83,6 +83,11 @@ const backupFiles = async () => {
 
 }
 
+const cleanInstall = async () => {
+    await Deno.remove(updateDirectory)
+    await Deno.remove(backupDirectory)
+}
+
 const appUpdate = async () => {
 
     console.log(`[StreamBot] Checking new version...`)
@@ -102,6 +107,9 @@ const appUpdate = async () => {
         const unzip = await unzipVersion(remoteVersion)
         if(!unzip) return console.log(`[StreamBot] [ERROR:UNZIP] An error has occurred when decompressing files`)
         await moveVersion(remoteVersion)
+
+        console.log(`[StreamBot] Clean old files...`)
+        await cleanInstall()
 
         console.log(`[StreamBot] New version ${remoteVersion} installed!`)
 
