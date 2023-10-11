@@ -84,8 +84,8 @@ const backupFiles = async () => {
 }
 
 const cleanInstall = async () => {
-    await Deno.remove(updateDirectory)
-    await Deno.remove(backupDirectory)
+    await Deno.remove(updateDirectory, { recursive: true })
+    await Deno.remove(backupDirectory, { recursive: true })
 }
 
 const appUpdate = async () => {

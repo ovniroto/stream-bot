@@ -1,4 +1,4 @@
-# [StreamBot](https://streambot.deno.dev) v0.1.1 (WIP)
+# [StreamBot](https://streambot.deno.dev) v0.1.2 (WIP)
 
 [![GitHub Issues](https://img.shields.io/github/issues/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/issues)
 [![GitHub Tag](https://img.shields.io/github/tag/ovniroto/stream-bot.svg)](https://github.com/ovniroto/stream-bot/tags)
@@ -64,6 +64,21 @@ Rename the `.env.example` file to `.env` and fill information
 * Copy **Secret Key** and paste in the `.env` file (OPENAI_API_KEY)
 
 ### 6. Run `StreamBot_Start.bat`
+
+## Troubleshooting
+
+### 1. Uncaught MissingEnvVarsError
+
+```sh
+error: Uncaught MissingEnvVarsError: The following variables were defined in the example file but are not present in the environment:
+  TWITCH_USERNAME, TWITCH_PASSWORD, TWITCH_CHANNEL, OPENAI_API_KEY, DEBUG, ENVIRONMENT
+
+Make sure to add them to your env file.
+
+[...]
+```
+
+If this error has come out, the most possible is that you have not renamed the `.env.example` to` .env` file.
 
 ## Contributors
 All issue reports, feature requests, pull requests and github stars are welcomed and much appreciated.

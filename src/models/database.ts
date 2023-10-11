@@ -1,5 +1,12 @@
 // deno-lint-ignore-file
 
+import { exists } from "$std/fs/mod.ts"
+
+const databaseDirectory = "./database"
+
+const databaseDirectoryExists = await exists(databaseDirectory)
+if(!databaseDirectoryExists) await Deno.mkdir(databaseDirectory)
+
 const env = Deno.env.get("ENVIRONMENT")!
 const db = env == "development" || "local-production" ? await Deno.openKv('./database/data.db') : await Deno.openKv()
 
