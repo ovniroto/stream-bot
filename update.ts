@@ -48,7 +48,6 @@ const moveVersion = async (version: string) => {
 
     await Deno.rename(newVersionDirectory + "src", "./src")
     await Deno.rename(newVersionDirectory + ".gitignore", "./.gitignore")
-    await Deno.rename(newVersionDirectory + ".env.example", "./.env.example")
     await Deno.rename(newVersionDirectory + "deno.json", "./deno.json")
     await Deno.rename(newVersionDirectory + "version", "./version")
     await Deno.rename(newVersionDirectory + "update.ts", "./update.ts")
@@ -68,7 +67,6 @@ const backupFiles = async () => {
 
     await Deno.rename("./src", backupDirectory + "src")
     await Deno.rename("./.gitignore", backupDirectory + ".gitignore")
-    await Deno.rename("./.env.example", backupDirectory + ".env.example")
     await Deno.rename("./deno.json", backupDirectory + "deno.json")
     await Deno.rename("./version", backupDirectory + "version")
     await Deno.rename("./update.ts", backupDirectory + "update.ts")
