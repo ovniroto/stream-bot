@@ -1,4 +1,5 @@
 # [StreamBot](https://streambot.deno.dev) v0.1.2 (WIP)
+![StreamBot](https://i.imgur.com/12cvjFU.png)
 
 [![GitHub Issues](https://img.shields.io/github/issues/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/issues)
 [![GitHub Tag](https://img.shields.io/github/tag/ovniroto/stream-bot.svg)](https://github.com/ovniroto/stream-bot/tags)
@@ -7,7 +8,7 @@
 
 Essential bot for your stream!
 
-This is a bot with various features for your stream on Twitch. You can create your own commands, activate or disable them, and much more!
+This is a bot with various features for your stream. You can create your own commands, activate or disable them, and much more!
 
 ## Features
 
@@ -30,7 +31,7 @@ This is a bot with various features for your stream on Twitch. You can create yo
 ### Soon
 * Kick.com support
 * Custom timed events
-* Who Wnats To Be a Millonaire (Stream overlay game)
+* Stream Games Overlay
 
 ### Resources
 - [Documentation](https://streambot.deno.dev/docs)
@@ -46,6 +47,8 @@ First download the [latest released version](https://github.com/ovniroto/stream-
 
 Make sure to install [Deno](https://docs.deno.com/runtime/manual/getting_started/installation)
 
+> Deno is a JavaScript/TS runtime that allows you to execute this bot.
+
 ### 3. Rename `.env.example` file
 
 Rename the `.env.example` file to `.env` and fill information
@@ -60,14 +63,14 @@ Rename the `.env.example` file to `.env` and fill information
 ### 5. Create OpenAI API Key
 
 * Create new account or login on [OpenAI](https://openai.com/)
-* Go to your [API Keys](https://platform.openai.com/account/api-keys) and create new secret key
+* Go to your [API Keys](https://platform.openai.com/account/api-keys) and create **new secret key**
 * Copy **Secret Key** and paste in the `.env` file (OPENAI_API_KEY)
 
 ### 6. Run `StreamBot_Start.bat`
 
 ## Troubleshooting
 
-### 1. Uncaught MissingEnvVarsError
+### MissingEnvVarsError
 
 ```sh
 error: Uncaught MissingEnvVarsError: The following variables were defined in the example file but are not present in the environment:
@@ -78,7 +81,11 @@ Make sure to add them to your env file.
 [...]
 ```
 
-If this error has come out, the most possible is that you have not renamed the `.env.example` to` .env` file.
+You may not have renamed the file `.env.example` to `.env`.
+
+### Login authentication failed
+
+Twitch credentials are incorrect. Check the data you have put in the `.env` file.
 
 ## Contributors
 All issue reports, feature requests, pull requests and github stars are welcomed and much appreciated.
