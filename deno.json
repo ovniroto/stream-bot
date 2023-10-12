@@ -3,15 +3,14 @@
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check ./src/**/*.ts && deno check ./src/**/*.tsx",
     "dev": "deno run -A --unstable --watch=./src/static/,./src/routes/ ./src/dev.ts",
-    "build": "deno run -A --unstable ./src/dev.ts build",
-    "start": "deno run -A --unstable ./src/main.ts",
     "build": "deno run -A ./build.ts",
+    "start": "deno run -A --unstable ./src/main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
     "preview": "deno run -A ./main.ts"
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.5.0/",
+    "$fresh/": "https://deno.land/x/fresh@1.5.1/",
     "preact": "https://esm.sh/preact@10.18.1",
     "preact/": "https://esm.sh/preact@10.18.1/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
