@@ -31,7 +31,7 @@ This is a bot with various features for your stream. You can create your own com
 ### Soon
 * Kick.com support
 * Custom timed events
-* Stream Games Overlay
+* Stream Game Overlay
 
 ### Resources
 - [Documentation](https://streambot.deno.dev/docs)
@@ -55,10 +55,17 @@ Rename the `.env.example` file to `.env` and fill information
 
 ### 4. Create Twitch oauth token
 
+* Login with your main account or bot account on Twitch
 * Enter to [twitchtokengenerator.com](https://twitchtokengenerator.com)
 * Select **Bot Chat Token**
 * Authorize **Twitch Token Generator** in your account
-* Copy **Access Token** and paste in the `.env` file (TWITCH_PASSWORD)
+* Copy **Access Token** and paste in the `.env` file (TWITCH_ACCESS_TOKEN)
+
+Example:
+```sh
+TWITCH_ACCESS_TOKEN="your-token-here"
+```
+
 
 ### 5. Create OpenAI API Key
 
@@ -67,6 +74,10 @@ Rename the `.env.example` file to `.env` and fill information
 * Copy **Secret Key** and paste in the `.env` file (OPENAI_API_KEY)
 
 ### 6. Run `StreamBot_Start.bat`
+
+## Bot Updates
+
+If you want to check if there are new bot updates, you just have to run the file `StreamBot_Update.bat`.
 
 ## Troubleshooting
 
