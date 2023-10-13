@@ -1,0 +1,144 @@
+[
+    {
+        "name": "ping",
+        "alias": [],
+        "description": "Command testing. 🏓 Ping -> Pong",
+        "permissions": [],
+        "type": "response",
+        "content": "Pong! 🏓",
+        "cooldown": {
+            "user": 0,
+            "global": 0
+        },
+        "category": "utils",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "8ball",
+        "alias": [ "magicball" ],
+        "description": "A magical ball that will respond in an affirmative or negative way.",
+        "permissions": [],
+        "type": "random-option",
+        "options": [],
+        "cooldown": {
+            "user": 15,
+            "global": 5
+        },
+        "category": "fun",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "fortune",
+        "alias": [ "cookie" ],
+        "description": "A fortune cookie with a phrase for you.",
+        "permissions": [],
+        "type": "random-option",
+        "options": [],
+        "cooldown": {
+            "user": 86400,
+            "global": 5
+        },
+        "category": "fun",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "rtd",
+        "alias": [ "rollthedice", "dice6" ],
+        "description": "It is simply a dice.",
+        "permissions": [],
+        "type": "random-number",
+        "number": {
+            "min": 1,
+            "max": 6
+        },
+        "cooldown": {
+            "user": 15,
+            "global": 5
+        },
+        "category": "fun",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "ai",
+        "alias": [ "ia", "gpt" ],
+        "description": "Chat GPT command.",
+        "permissions": [
+            "broadcaster",
+            "moderator",
+            "vip",
+            "subscriber",
+            "founder"
+        ],
+        "type": "chatgpt",
+        "chatgpt": {
+            "model": "gpt-3.5-turbo-instruct",
+            "temperature": 0.7,
+            "maxTokens": 200
+        },
+        "cooldown": {
+            "user": 900,
+            "global": 30
+        },
+        "category": "utility",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "aimod",
+        "alias": [ "iamod", "gptmod" ],
+        "description": "Chat GPT moderation command.",
+        "permissions": [
+            "broadcaster",
+            "moderator"
+        ],
+        "type": "chatgpt-mod",
+        "cooldown": {
+            "user": 0,
+            "global": 0
+        },
+        "category": "utility",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "tts",
+        "alias": [],
+        "description": "Text To Speech command.",
+        "permissions": [
+            "broadcaster",
+            "moderator",
+            "vip",
+            "subscriber",
+            "founder"
+        ],
+        "type": "tts",
+        "cooldown": {
+            "user": 900,
+            "global": 30
+        },
+        "category": "utility",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "ttsmod",
+        "alias": [ "ttsm" ],
+        "description": "Text To Speech moderation command.",
+        "permissions": [
+            "broadcaster",
+            "moderator"
+        ],
+        "type": "tts-mod",
+        "cooldown": {
+            "user": 0,
+            "global": 0
+        },
+        "category": "utility",
+        "default": true,
+        "disabled": false
+    }
+]

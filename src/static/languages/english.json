@@ -1,0 +1,16 @@
+{
+    "system": {
+
+    },
+    "commands": {
+        "8ball": {
+            
+        },
+        "fortune": {
+
+        },
+        "chatgpt": {
+            "down": "OpenAI is down. Please try again later."
+        }
+    }
+}

@@ -3,7 +3,18 @@ export interface ICommand {
     alias: string[]
     permissions: string[]
     description: string
-    type: string,
+    type: string
+    content?: string
+    options?: string[]
+    number?: {
+        min: number
+        max: number
+    }
+    chatgpt?: {
+        model: string
+        temperature: number
+        maxTokens: number
+    }
     cooldown: {
         user: number
         global: number
@@ -15,6 +26,8 @@ export interface ICommand {
 
 export interface IDatabaseCommand {
     key: [ string, string ]
-    value: ICommand,
+    value: ICommand
     versionstamp?: string
 }
+
+export type ICommandPlatform = "twitch"
