@@ -10,6 +10,8 @@ Essential bot for your stream!
 
 This is a bot with various features for your stream. You can create your own commands, activate or disable them, and much more!
 
+### ⚠️ **Bot is not ready yet. Star this project to know when it's ready.**
+
 ## Features
 
 * 🥳 Stream Panel
@@ -22,11 +24,11 @@ This is a bot with various features for your stream. You can create your own com
 * ... and much more soon!
 
 ## Default Commands
-* 🤖 AI (!ai)
-* 🔊 TTS (!tts)
-* 🎲 Roll the dice (!rtd)
-* 🥠 Fortune cookie (!fortune)
-* 🎱 8 Ball (!8ball)
+* 🤖 AI - **!ai**
+* 🔊 TTS - **!tts**
+* 🎲 Roll the dice - **!rtd**
+* 🥠 Fortune cookie - **!fortune**
+* 🎱 8 Ball - **!8ball**
 
 ### Soon
 * Kick.com support
@@ -68,6 +70,8 @@ TWITCH_ACCESS_TOKEN="your-token-here"
 
 
 ### 5. Create OpenAI API Key
+
+**Important**: The !ai command uses your OpenAI API Key to generate the responses. This entails an economic expense that you must control for yourself. We recommend creating a [usage limit on your OpenAI account](https://platform.openai.com/account/billing/limits) to avoid unwanted spending and automatically blocking responses from being generated when you reach that limit. You can also use the !aimod command to turn the command on or off. You can keep the command disabled if you don't want to use this feature. You can change the generation model to a less expensive one with the !aimod command or from the bot panel.
 
 * Create new account or login on [OpenAI](https://openai.com/)
 * Go to your [API Keys](https://platform.openai.com/account/api-keys) and create **new secret key**
