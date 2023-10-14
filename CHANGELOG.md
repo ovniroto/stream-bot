@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.3.1
+
+Release 14 oct 2023
+
+  * Code refactor and fixes
+
 ### 0.3.0
 
 Release 14 oct 2023
