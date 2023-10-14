@@ -1,6 +1,6 @@
 import * as commandModel from "@/models/command.ts"
 import { ICommand, ICommandPlatform, ICommandDatabase } from '@/interfaces/commands.ts'
-import { IChat, IClient } from '@/interfaces/twitch.ts'
+import { ITwitchChat, ITwitchClient } from '@/interfaces/twitch.ts'
 
 import responseCommand from '@/commands/response.ts'
 import randomNumberCommand from '@/commands/random-number.ts'
@@ -31,7 +31,7 @@ const create = async (data: ICommand) => {
     await commandModel.create(data.name, data)
 }
 
-const execute = async (command: ICommandDatabase, chat: IChat, client: IClient, platform: ICommandPlatform) => {
+const execute = async (command: ICommandDatabase, chat: ITwitchChat, client: ITwitchClient, platform: ICommandPlatform) => {
 
     const commandData = command.value
 

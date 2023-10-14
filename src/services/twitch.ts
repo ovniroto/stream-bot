@@ -1,7 +1,7 @@
 // deno-lint-ignore-file
 
 import * as tmi from 'tmi.js'
-import { IChat, IChatData, IClient } from '@/interfaces/twitch.ts'
+import { ITwitchChat, ITwitchChatData, ITwitchClient } from '@/interfaces/twitch.ts'
 import * as commandService from '@/services/commands.ts'
 
 const load = async () => {
@@ -27,11 +27,11 @@ const load = async () => {
     })
 }
 
-const chatMessageData = async (client: IClient, data: IChatData) => {
+const chatMessageData = async (client: ITwitchClient, data: ITwitchChatData) => {
 
     if(data.self) return
 
-    const chat: IChat = {
+    const chat: ITwitchChat = {
         channel: data.channel,
         user: {
             id: data.userstate["user-id"],
@@ -60,7 +60,7 @@ const chatMessageData = async (client: IClient, data: IChatData) => {
     
 }
 
-const sendChatMessage = async (client: IClient, channel: string, message: string) => {
+const sendChatMessage = async (client: ITwitchClient, channel: string, message: string) => {
     client.say(channel, message)
 }
 

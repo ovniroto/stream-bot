@@ -1,5 +1,8 @@
 {
     "commands": {
+        "rtd": {
+            "RESPONSE": "🎲 @{user} lanza un dado y sale el número {number}!"
+        },
         "8ball": {
             "OPTIONS": [
                 "Es cierto.",
