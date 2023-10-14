@@ -3,7 +3,7 @@
         "name": "ping",
         "alias": [],
         "description": "Command testing. 🏓 Ping -> Pong",
-        "permissions": [],
+        "permissions": [ "broadcaster" ],
         "type": "response",
         "content": "Pong! 🏓",
         "cooldown": {
@@ -100,7 +100,7 @@
             "user": 0,
             "global": 0
         },
-        "category": "utility",
+        "category": "moderation",
         "default": true,
         "disabled": false
     },
@@ -137,7 +137,7 @@
             "user": 0,
             "global": 0
         },
-        "category": "utility",
+        "category": "moderation",
         "default": true,
         "disabled": false
     }

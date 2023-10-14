@@ -4,10 +4,7 @@ import * as tmi from 'tmi.js'
 import { IChat, IChatData, IClient } from '../interfaces/twitch.ts'
 import * as commandService from './commands.ts'
 
-/**
- * Connect Twitch Client
- */
-const connect = async () => {
+const load = async () => {
 
     const client = new tmi.Client({
         identity: {
@@ -30,12 +27,6 @@ const connect = async () => {
     })
 }
 
-/**
- * Structure message data and check commands
- *
- * @param {*} client
- * @param {IClient} data
- */
 const chatMessageData = async (client: IClient, data: IChatData) => {
 
     if(data.self) return
@@ -74,6 +65,6 @@ const sendChatMessage = async (client: IClient, channel: string, message: string
 }
 
 export {
-    connect,
+    load,
     sendChatMessage
 }

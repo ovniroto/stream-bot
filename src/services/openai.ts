@@ -1,7 +1,6 @@
-// deno-lint-ignore-file
-
 import { OpenAI } from "openai"
 import * as bot from "./bot.ts"
+import { IOpenAICompletion } from "../interfaces/openai.ts"
 
 const openai = new OpenAI(Deno.env.get("OPENAI_API_KEY")!)
 
@@ -9,7 +8,7 @@ const request = async (prompt: string, model: string, temperature: number, maxTo
 
     const lang = await bot.lang()
 
-    const response: any = await openai.createCompletion({
+    const response: IOpenAICompletion = await openai.createCompletion({
         model: model,
         prompt: prompt,
         temperature: temperature,

@@ -24,7 +24,7 @@ export interface ICommand {
     disabled: boolean
 }
 
-export interface IDatabaseCommand {
+export interface ICommandDatabase {
     key: [ string, string ]
     value: ICommand
     versionstamp?: string
