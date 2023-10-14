@@ -1,0 +1,44 @@
+[
+    {
+        "name": "spoty",
+        "alias": [
+            "music",
+            "spotify"
+        ],
+        "description": "Spotify command.",
+        "permissions": [
+            "broadcaster",
+            "moderator",
+            "vip",
+            "subscriber",
+            "founder"
+        ],
+        "type": "spotify",
+        "cooldown": {
+            "user": 5,
+            "global": 0
+        },
+        "category": "utility",
+        "default": true,
+        "disabled": false
+    },
+    {
+        "name": "spotymod",
+        "alias": [
+            "spotym"
+        ],
+        "description": "Spotify moderation command.",
+        "permissions": [
+            "broadcaster",
+            "moderator"
+        ],
+        "type": "spotify-mod",
+        "cooldown": {
+            "user": 0,
+            "global": 0
+        },
+        "category": "moderation",
+        "default": true,
+        "disabled": false
+    }
+]

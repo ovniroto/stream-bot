@@ -1,7 +1,5 @@
-// deno-lint-ignore-file
-
 import * as commandModel from '../models/command.ts'
-import { ICommand, ICommandPlatform, IDatabaseCommand } from '../interfaces/commands.ts'
+import { ICommand, ICommandPlatform, ICommandDatabase } from '../interfaces/commands.ts'
 import { IChat, IClient } from '../interfaces/twitch.ts'
 
 import responseCommand from '../commands/response.ts'
@@ -24,7 +22,7 @@ const getAll = async () => {
 
 const getCommandByAlias = async (name: string) => {
     const commands = await getAll()
-    const aliasCommand = commands.filter((command: IDatabaseCommand) => command.value.alias.find(alias => alias === name))
+    const aliasCommand = commands.filter((command: ICommandDatabase) => command.value.alias.find(alias => alias === name))
     if(!aliasCommand[0]) return undefined
     return aliasCommand[0]
 }
@@ -33,7 +31,7 @@ const create = async (data: ICommand) => {
     await commandModel.create(data.name, data)
 }
 
-const execute = async (command: IDatabaseCommand, chat: IChat, client: IClient, platform: ICommandPlatform) => {
+const execute = async (command: ICommandDatabase, chat: IChat, client: IClient, platform: ICommandPlatform) => {
 
     const commandData = command.value
 
@@ -51,15 +49,21 @@ const execute = async (command: IDatabaseCommand, chat: IChat, client: IClient, 
 }
 
 const disable = async (name: string): Promise<Deno.KvCommitResult> => {
-    const command = await get(name) as unknown as IDatabaseCommand
+    const command = await get(name) as unknown as ICommandDatabase
     command.value.disabled = true
-    const data = command.value
-    return await commandModel.update(name, data)
+    return await commandModel.update(name, command.value)
+}
+
+const enable = async (name: string): Promise<Deno.KvCommitResult> => {
+    const command = await get(name) as unknown as ICommandDatabase
+    command.value.disabled = false
+    return await commandModel.update(name, command.value)
 }
 
 export {
     get,
     create,
     execute,
+    enable,
     disable
 }

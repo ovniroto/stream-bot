@@ -1,9 +1,11 @@
-export interface IDatabaseBot {
+export interface IBotData {
+    installed: boolean
+    version: string
+    language: string
+}
+
+export interface IBotDatabase {
     key: [string, string]
-    value: {
-        installed: boolean
-        version: string
-        language: string
-    },
+    value: IBotData,
     versionstamp?: string
 }

@@ -1,20 +1,21 @@
-// deno-lint-ignore-file
-
 import * as botModel from '../models/bot.ts'
 import * as commands from './commands.ts'
 import * as twitch from './twitch.ts'
+import * as spotify from './spotify.ts'
 import { fileData } from "../utils/file.ts"
 import { ICommand } from "../interfaces/commands.ts"
 
 const start = async () => {
 
-    console.log("[StreamBot] Starting...")
+    console.log("[StreamBot] Loading bot system...")
 
     await loadVersion()
     await loadEnvParams()
 
-    // Connect Twitch Client
-    await twitch.connect()
+    await twitch.load()
+    await spotify.load()
+
+    console.log("[StreamBot] Bot ready! Have fun! 😄")
 
 }
 
@@ -29,6 +30,12 @@ const loadEnvParams = async () => {
     if(Deno.env.get("OPENAI_API_KEY") === "your-key-here") {
         await commands.disable("ai")
         console.log("[StreamBot] The !ai command has been disabled because you have not set the OpenAI API Key.")
+    }
+
+    // Spotify env params
+    if(Deno.env.get("SPOTIFY_CLIENT_ID") === "your-key-here" || Deno.env.get("SPOTIFY_CLIENT_SECRET") === "your-secret-key-here") {
+        await commands.disable("spoty")
+        console.log("[StreamBot] The !spoty command has been disabled because you have not added Spotify Client ID and Client Secret.")
     }
 
 }
@@ -66,6 +73,15 @@ const update = async (fileVersion: string) => {
     if(fileVersion >= '0.1.0') {
         
         const cmds = await fileData("static/commands/0.1.0.json")
+        cmds.forEach(async (command: ICommand) => {
+            await commands.create(command)
+        })
+
+    }
+
+    if(fileVersion >= '0.3.0') {
+        
+        const cmds = await fileData("static/commands/0.3.0.json")
         cmds.forEach(async (command: ICommand) => {
             await commands.create(command)
         })

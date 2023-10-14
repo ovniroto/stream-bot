@@ -20,6 +20,7 @@
     "twind/": "https://esm.sh/twind@0.16.19/",
     "$std/": "https://deno.land/std@0.193.0/",
     "fresh-session": "https://deno.land/x/fresh_session@0.2.2/mod.ts",
+    "querystring": "https://deno.land/x/querystring@v1.0.2/mod.js",
     "zip": "https://deno.land/x/zip@v1.2.5/mod.ts",
     "openai": "https://deno.land/x/openai@1.4.2/mod.ts",
     "uuid": "https://esm.sh/uuid@9.0.0",
