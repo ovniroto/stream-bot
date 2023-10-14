@@ -1,14 +1,14 @@
-import * as commandModel from '../models/command.ts'
-import { ICommand, ICommandPlatform, ICommandDatabase } from '../interfaces/commands.ts'
-import { IChat, IClient } from '../interfaces/twitch.ts'
+import * as commandModel from "@/models/command.ts"
+import { ICommand, ICommandPlatform, ICommandDatabase } from '@/interfaces/commands.ts'
+import { IChat, IClient } from '@/interfaces/twitch.ts'
 
-import responseCommand from '../commands/response.ts'
-import randomNumberCommand from '../commands/random-number.ts'
-import randomOptionCommand from '../commands/random-option.ts'
-import chatGPTCommand from '../commands/chatgpt.ts'
-import chatGPTModCommand from '../commands/chatgpt-mod.ts'
-import ttsCommand from '../commands/tts.ts'
-import ttsModCommand from '../commands/tts-mod.ts'
+import responseCommand from '@/commands/response.ts'
+import randomNumberCommand from '@/commands/random-number.ts'
+import randomOptionCommand from '@/commands/random-option.ts'
+import chatGPTCommand from '@/commands/chatgpt.ts'
+import chatGPTModCommand from '@/commands/chatgpt-mod.ts'
+import ttsCommand from '@/commands/tts.ts'
+import ttsModCommand from '@/commands/tts-mod.ts'
 
 const get = async (name: string) => {
     const command = await commandModel.get(name)

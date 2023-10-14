@@ -1,12 +1,58 @@
 // deno-lint-ignore-file
 
-import * as spotifyModel from '../models/spotify.ts'
-import { encodeFormData } from "../utils/form.ts"
+import * as spotifyModel from '@/models/spotify.ts'
+import { encodeFormData } from "@/utils/form.ts"
+import * as queryString from "querystring"
 
 const spotifyApiUri = "https://api.spotify.com/v1"
 
 const load = async () => {
     await getTokenStatus()
+}
+
+const login = async () => {
+
+    const scopes = "playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative user-read-currently-playing user-read-recently-played user-read-playback-state user-modify-playback-state"
+
+    const spotifyUri = "https://accounts.spotify.com/authorize?" + queryString.stringify({
+		response_type: 'code',
+		client_id: Deno.env.get("SPOTIFY_CLIENT_ID")!,
+		scope: scopes,
+		redirect_uri: "http://localhost:8000/api/spotify"
+    })
+
+    return Response.redirect(spotifyUri)
+
+}
+
+const createToken = async (code: string) => {
+
+    const body = {
+        code: code,
+        grant_type: 'authorization_code',
+        redirect_uri: "http://localhost:8000/api/spotify",
+    }
+
+    const auth = btoa(Deno.env.get("SPOTIFY_CLIENT_ID")! + ":" + Deno.env.get("SPOTIFY_CLIENT_SECRET")!)
+
+    const response = await fetch("https://accounts.spotify.com/api/token", {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          'Authorization': 'Basic ' + auth
+        },
+        body: encodeFormData(body)
+    })
+
+    const tokens = await response.json()
+
+    await saveTokens({
+        token: tokens.access_token,
+        refresh: tokens.refresh_token
+    })
+
+    return Response.redirect("http://localhost:8000/spotify/success")
+
 }
 
 const saveTokens = async (tokens: { token: string, refresh: string }) => {
@@ -134,7 +180,7 @@ const previousTrack = async () => {
 
 }
 
-const addTraclToPlaylist = async (playlist: string, song: string) => {
+const addTrackToPlaylist = async (playlist: string, song: string) => {
 
     const token = await getToken()
 
@@ -182,7 +228,7 @@ const getTrackData = async () => {
         artists.push(status.item.artists[index].name)
     }
 
-    const trackData = {
+    return {
         id: status.item.id,
         name: status.item.name,
         album: status.item.album.name,
@@ -190,19 +236,15 @@ const getTrackData = async () => {
         url: "https://open.spotify.com/track/" + status.item.id
     }
 
-    return trackData
-
 }
 
 export {
-
     load,
+    login,
+    createToken,
     saveTokens,
-
     nextTrack,
     previousTrack,
-
-    addTraclToPlaylist,
+    addTrackToPlaylist,
     getTrackData
-
 }

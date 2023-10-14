@@ -1,7 +1,7 @@
 // deno-lint-ignore-file
 
-import * as db from '../models/database.ts'
-import { ICommandDatabase }  from "../interfaces/commands.ts"
+import * as db from '@/models/database.ts'
+import { ICommandDatabase }  from "@/interfaces/commands.ts"
 
 const get = async (name: string): Promise<ICommandDatabase> => {
 	return await db.get("commands", name) as unknown as ICommandDatabase

@@ -1,9 +1,9 @@
-import * as botModel from '../models/bot.ts'
-import * as commands from './commands.ts'
-import * as twitch from './twitch.ts'
-import * as spotify from './spotify.ts'
-import { fileData } from "../utils/file.ts"
-import { ICommand } from "../interfaces/commands.ts"
+import * as botModel from '@/models/bot.ts'
+import * as commands from "@/services/commands.ts"
+import * as twitch from '@/services/twitch.ts'
+import * as spotify from '@/services/spotify.ts'
+import { fileData } from "@/utils/file.ts"
+import { ICommand } from "@/interfaces/commands.ts"
 
 const start = async () => {
 
@@ -110,15 +110,4 @@ const update = async (fileVersion: string) => {
 
 }
 
-const lang = async () => {
-    const bot = await botModel.get()
-    const language = bot.value?.language
-    if(!language) return
-    return await fileData(`static/languages/${language}.json`)
-}
-
 start()
-
-export {
-    lang
-}

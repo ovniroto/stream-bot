@@ -1,7 +1,7 @@
 // deno-lint-ignore-file
 
-import * as db from '../models/database.ts'
-import { ISpotifyDatabase }  from "../interfaces/spotify.ts"
+import * as db from '@/models/database.ts'
+import { ISpotifyDatabase }  from "@/interfaces/spotify.ts"
 
 const get = async (): Promise<ISpotifyDatabase> => {
 	return await db.get("system", "spotify") as unknown as ISpotifyDatabase

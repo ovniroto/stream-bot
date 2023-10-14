@@ -1,8 +1,8 @@
 // deno-lint-ignore-file
 
 import * as tmi from 'tmi.js'
-import { IChat, IChatData, IClient } from '../interfaces/twitch.ts'
-import * as commandService from './commands.ts'
+import { IChat, IChatData, IClient } from '@/interfaces/twitch.ts'
+import * as commandService from '@/services/commands.ts'
 
 const load = async () => {
 
