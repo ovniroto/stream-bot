@@ -103,7 +103,7 @@ const refreshToken = async () => {
 const getTokenStatus = async () =>  {
 
     const spotifyData = await spotifyModel.get()
-    const token = spotifyData.value.token
+    const token = spotifyData.value?.token
     
     const response = await fetch(spotifyApiUri + "/me", {
         method: 'GET',

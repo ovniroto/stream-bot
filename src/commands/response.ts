@@ -1,13 +1,13 @@
 // deno-lint-ignore-file
 
 import { ICommandPlatform, ICommandDatabase } from '@/interfaces/commands.ts'
-import { IChat, IClient } from '@/interfaces/twitch.ts'
+import { ICommandChat, ICommandClient } from '@/interfaces/commands.ts'
 
-const responseCommand = async (command: ICommandDatabase, chat: IChat, client: IClient, platform: ICommandPlatform) => {
+const responseCommand = async (command: ICommandDatabase, chat: ICommandChat, client: ICommandClient, platform: ICommandPlatform) => {
 
     const commandData = command.value
 
-    if(platform === "twitch") return client.say(chat.channel, commandData.content as unknown as string)
+    if(platform === "twitch") return client.say(chat.channel, commandData.response as unknown as string)
 
 }
 

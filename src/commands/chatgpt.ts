@@ -1,9 +1,9 @@
 import * as chatgpt from '@/services/openai.ts'
 import { ICommandPlatform, ICommandDatabase } from '@/interfaces/commands.ts'
-import { IChat, IClient } from '@/interfaces/twitch.ts'
+import { ICommandChat, ICommandClient } from '@/interfaces/commands.ts'
 import * as langService from "@/services/language.ts"
 
-const chatGPTCommand = async (command: ICommandDatabase, chat: IChat, client: IClient, platform: ICommandPlatform) => {
+const chatGPTCommand = async (command: ICommandDatabase, chat: ICommandChat, client: ICommandClient, platform: ICommandPlatform) => {
 
     const lang = await langService.get()
 

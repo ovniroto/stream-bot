@@ -1,7 +1,7 @@
 import * as botModel from '@/models/bot.ts'
-import * as commands from "@/services/commands.ts"
-import * as twitch from '@/services/twitch.ts'
-import * as spotify from '@/services/spotify.ts'
+import * as commandsService from "@/services/commands.ts"
+import * as twitchService from '@/services/twitch.ts'
+import * as spotifyService from '@/services/spotify.ts'
 import { fileData } from "@/utils/file.ts"
 import { ICommand } from "@/interfaces/commands.ts"
 
@@ -12,8 +12,8 @@ const start = async () => {
     await loadVersion()
     await loadEnvParams()
 
-    await twitch.load()
-    await spotify.load()
+    await twitchService.load()
+    await spotifyService.load()
 
     console.log("[StreamBot] Bot ready! Have fun! 😄")
 
@@ -28,13 +28,13 @@ const loadEnvParams = async () => {
 
     // OpenAI env params
     if(Deno.env.get("OPENAI_API_KEY") === "your-key-here") {
-        await commands.disable("ai")
+        await commandsService.disable("ai")
         console.log("[StreamBot] The !ai command has been disabled because you have not set the OpenAI API Key.")
     }
 
     // Spotify env params
     if(Deno.env.get("SPOTIFY_CLIENT_ID") === "your-key-here" || Deno.env.get("SPOTIFY_CLIENT_SECRET") === "your-secret-key-here") {
-        await commands.disable("spoty")
+        await commandsService.disable("spoty")
         console.log("[StreamBot] The !spoty command has been disabled because you have not added Spotify Client ID and Client Secret.")
     }
 
@@ -72,9 +72,13 @@ const update = async (fileVersion: string) => {
 
     if(fileVersion >= '0.1.0') {
         
+        const defaultLang = await fileData(`static/languages/english.json`)
         const cmds = await fileData("static/commands/0.1.0.json")
         cmds.forEach(async (command: ICommand) => {
-            await commands.create(command)
+            if(command.name == "rtd") command.response = defaultLang.commands["rtd"]["RESPONSE"]
+            if(command.name == "fortune") command.options = defaultLang.commands["fortune"]["OPTIONS"]
+            if(command.name == "8ball") command.options = defaultLang.commands["8ball"]["OPTIONS"]
+            await commandsService.create(command)
         })
 
     }
@@ -83,7 +87,7 @@ const update = async (fileVersion: string) => {
         
         const cmds = await fileData("static/commands/0.3.0.json")
         cmds.forEach(async (command: ICommand) => {
-            await commands.create(command)
+            await commandsService.create(command)
         })
 
     }

@@ -5,7 +5,8 @@
         "description": "Command testing. 🏓 Ping -> Pong",
         "permissions": [ "broadcaster" ],
         "type": "response",
-        "content": "Pong! 🏓",
+        "icon": "🏓",
+        "response": "Pong! 🏓",
         "cooldown": {
             "user": 0,
             "global": 0
@@ -20,6 +21,7 @@
         "description": "A magical ball that will respond in an affirmative or negative way.",
         "permissions": [],
         "type": "random-option",
+        "icon": "🎱",
         "options": [],
         "cooldown": {
             "user": 15,
@@ -35,6 +37,7 @@
         "description": "A fortune cookie with a phrase for you.",
         "permissions": [],
         "type": "random-option",
+        "icon": "🥠",
         "options": [],
         "cooldown": {
             "user": 86400,
@@ -50,6 +53,8 @@
         "description": "It is simply a dice.",
         "permissions": [],
         "type": "random-number",
+        "icon": "🎲",
+        "response": "",
         "number": {
             "min": 1,
             "max": 6
@@ -74,6 +79,7 @@
             "founder"
         ],
         "type": "chatgpt",
+        "icon": "🤖",
         "chatgpt": {
             "model": "gpt-3.5-turbo-instruct",
             "temperature": 0.7,
@@ -96,6 +102,7 @@
             "moderator"
         ],
         "type": "chatgpt-mod",
+        "icon": "🤖",
         "cooldown": {
             "user": 0,
             "global": 0
@@ -116,6 +123,7 @@
             "founder"
         ],
         "type": "tts",
+        "icon": "🔊",
         "cooldown": {
             "user": 900,
             "global": 30
@@ -133,6 +141,7 @@
             "moderator"
         ],
         "type": "tts-mod",
+        "icon": "🔊",
         "cooldown": {
             "user": 0,
             "global": 0
