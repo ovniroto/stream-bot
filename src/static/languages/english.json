@@ -1,9 +1,10 @@
 {
     "commands": {
         "rtd": {
-            "RESPONSE": "🎲 @{user} throws a dice and the number {number} comes up!"
+            "RESPONSE": "🎲 @{user} throws a dice and the number {1:6} comes up!"
         },
         "8ball": {
+            "RESPONSE": "🎱 @{user} the 8ball says:",
             "OPTIONS": [
                 "It's true.",
                 "It is so.",
@@ -28,6 +29,7 @@
             ]
         },
         "fortune": {
+            "RESPONSE": "🥠 @{user} has opened a fortune cookie:",
             "OPTIONS": [
                 "Success will come soon, or not.",
                 "Keep moving forward with confidence.",
