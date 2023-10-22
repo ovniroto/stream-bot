@@ -1,4 +1,4 @@
-# [StreamBot](https://streambot.deno.dev) v0.3.2 (WIP)
+
 ![StreamBot](https://i.imgur.com/12cvjFU.png)
 
 [![GitHub Issues](https://img.shields.io/github/issues/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/issues)
@@ -6,11 +6,10 @@
 [![GitHub Commits](https://img.shields.io/github/commit-activity/t/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/commits/main/)
 [![GitHub License](https://img.shields.io/github/license/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/blob/main/LICENSE)
 
-Essential bot for your stream!
+[StreamBot](https://streambot.ovni.dev) v0.3.2 (WIP) is an essential bot for your streams. You can create your own static or dynamic commands, activate or deactivate commands, and much more, all from a streamer panel where you can control everything.
 
-This is a bot with various features for your stream. You can create your own commands, activate or disable them, and much more!
-
-### ⚠️ **Bot is not ready yet. Star this project to know when it's ready.**
+> [!WARNING]
+> Please keep in mind that StreamBot is not ready yet and is still under active development. Full backward compatibility is not guaranteed before reaching v1.0.0.
 
 ## Features
 
@@ -38,7 +37,7 @@ This is a bot with various features for your stream. You can create your own com
 * Stream Game Overlay
 
 ### Resources
-- [Documentation](https://streambot.deno.dev/docs)
+- [Documentation](https://streambot.ovni.dev/docs)
 - [Changelog](https://github.com/ovniroto/stream-bot/blob/main/CHANGELOG.md)
 
 ## Local Installation
@@ -66,7 +65,8 @@ TWITCH_ACCESS_TOKEN="your-token-here"
 
 ### 4. Create OpenAI API Key (Optional)
 
-**Important**: The !ai command uses your OpenAI API Key to generate the responses. This entails an economic expense that you must control for yourself. We recommend creating a [usage limit on your OpenAI account](https://platform.openai.com/account/billing/limits) to avoid unwanted spending and automatically blocking responses from being generated when you reach that limit. You can also use the !aimod command to turn the command on or off. You can keep the command disabled if you don't want to use this feature. You can change the generation model to a less expensive one with the !aimod command or from the bot panel.
+> [!INFO]
+> The !ai command uses your OpenAI API Key to generate the responses. This entails an economic expense that you must control for yourself. We recommend creating a [usage limit on your OpenAI account](https://platform.openai.com/account/billing/limits) to avoid unwanted spending and automatically blocking responses from being generated when you reach that limit. You can also use the !aimod command to turn the command on or off. You can keep the command disabled if you don't want to use this feature. You can change the generation model to a less expensive one with the !aimod command or from the bot panel.
 
 * Create new account or login on [OpenAI](https://openai.com/)
 * Go to your [API Keys](https://platform.openai.com/account/api-keys) and create **new secret key**
@@ -74,7 +74,8 @@ TWITCH_ACCESS_TOKEN="your-token-here"
 
 ### 5. Create Spotify API Keys (Optional)
 
-**Important**: Spotify limits player actions for users who pay for Spotify Premium. If you don't pay for Spotify Premium, you won't be able to use actions like skip to the next or previous song, pause or resume music, etc.
+> [!INFO]
+> Spotify limits player actions for users who pay for Spotify Premium. If you don't pay for Spotify Premium, you won't be able to use actions like skip to the next or previous song, pause or resume music, etc.
 
 * Create new [Spotify App](https://developer.spotify.com/dashboard/create) with this data:
   * Name: StreamBot
