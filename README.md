@@ -64,7 +64,7 @@ TWITCH_ACCESS_TOKEN="your-token-here"
 
 ### 4. Create OpenAI API Key (Optional)
 
-> [!INFO]
+> [!NOTE]
 > The !ai command uses your OpenAI API Key to generate the responses. This entails an economic expense that you must control for yourself. We recommend creating a [usage limit on your OpenAI account](https://platform.openai.com/account/billing/limits) to avoid unwanted spending and automatically blocking responses from being generated when you reach that limit. You can also use the !aimod command to turn the command on or off. You can keep the command disabled if you don't want to use this feature. You can change the generation model to a less expensive one with the !aimod command or from the bot panel.
 
 * Create new account or login on [OpenAI](https://openai.com/)
@@ -73,7 +73,7 @@ TWITCH_ACCESS_TOKEN="your-token-here"
 
 ### 5. Create Spotify API Keys (Optional)
 
-> [!INFO]
+> [!NOTE]
 > Spotify limits player actions for users who pay for Spotify Premium. If you don't pay for Spotify Premium, you won't be able to use actions like skip to the next or previous song, pause or resume music, etc.
 
 * Create new [Spotify App](https://developer.spotify.com/dashboard/create) with this data:
