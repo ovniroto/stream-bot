@@ -5,10 +5,10 @@
 [![GitHub Commits](https://img.shields.io/github/commit-activity/t/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/commits/main/)
 [![GitHub License](https://img.shields.io/github/license/ovniroto/stream-bot)](https://github.com/ovniroto/stream-bot/blob/main/LICENSE)
 
-[StreamBot](https://streambot.ovni.dev) v0.3.2 (WIP) is an essential bot for your streams. You can create your own static or dynamic commands, activate or deactivate commands, and much more, all from a streamer panel where you can control everything.
+[StreamBot](https://streambot.ovni.dev) v0.3.3 (WIP) is an essential bot for your streams. You can create your own static or dynamic commands, activate or deactivate commands, and much more, all from a streamer panel where you can control everything.
 
 > [!WARNING]
-> Please keep in mind that StreamBot is not ready yet and is still under active development. Full backward compatibility is not guaranteed before reaching v0.3.2.
+> Please keep in mind that StreamBot is not ready yet and is still under active development. Full backward compatibility is not guaranteed before reaching v0.3.3.
 
 ## Features
 

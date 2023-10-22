@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.3.2
+### 0.3.3
 
 Release 22 oct 2023
 

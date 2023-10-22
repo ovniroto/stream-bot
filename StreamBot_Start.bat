@@ -1,6 +1,6 @@
 @echo off
 
-title StreamBot v0.3.2
+title StreamBot v0.3.3
 
 echo [StreamBot] Starting...
 
