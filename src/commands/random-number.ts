@@ -9,10 +9,7 @@ const randomNumberCommand = async (command: ICommandDatabase, chat: ICommandChat
     const min = command.value.number?.min as number
     const max = command.value.number?.max as number
 
-    const number = (Math.floor(Math.random() * (max - min + 1)) + min) as unknown as string
-    const username = chat.user.username as string
-
-    const response = formatResponse(command.value.response as string, { username, number })
+    const response = formatResponse(command.value.response as string, command.value, chat)
 
     if(platform === "twitch") return client.say(chat.channel, response)
 

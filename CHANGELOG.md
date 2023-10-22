@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.3.2
+
+Release 22 oct 2023
+
+  * Added new format system for command messages
+
 ### 0.3.1
 
 Release 14 oct 2023
